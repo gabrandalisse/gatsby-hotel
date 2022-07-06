@@ -1,44 +1,43 @@
-import React from 'react';
+import React from "react";
+import { Link } from "gatsby";
 import { css } from "@emotion/react";
-import Navegacion from "./nav";
-import styled from '@emotion/styled';
-import { Link } from 'gatsby';
+import styled from "@emotion/styled";
+import Navigation from "./nav";
 
-const EnlaceHome = styled(Link)`
+const HomeLink = styled(Link)`
   color: #fff;
   text-align: center;
   text-decoration: none;
 `;
 
 const Header = () => {
-    return (
-      <header
+  return (
+    <header
+      css={css`
+        background-color: rgba(44, 62, 80);
+        padding: 1rem;
+      `}
+    >
+      <div
         css={css`
-          background-color: rgba(44,62,80);
-          padding: 1rem;
+          max-width: 1200px;
+          margin: 0 auto;
+
+          @media (min-width: 768px) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
         `}
       >
-        <div
-          css={css`
-            max-width: 1200px;
-            margin: 0 auto;
+        <HomeLink to="/">
+          <h1> The Fall Hotel </h1>
+        </HomeLink>
 
-            @media (min-width: 768px) {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-            }
-          `}
-        >
-          <EnlaceHome
-            to="/"
-          >
-          <h1> The Fall Hotel </h1></EnlaceHome>
-        
-          <Navegacion />
-        </div>
-      </header>
-    )
-}
- 
+        <Navigation />
+      </div>
+    </header>
+  );
+};
+
 export default Header;

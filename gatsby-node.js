@@ -1,27 +1,28 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
-    const resultado = await graphql(`
+  const queryResult = await graphql(`
     query {
-        allDatoCmsHabitacion {
+      allDatoCmsHabitacion {
         nodes {
-               slug
-          }
+          slug
         }
-    }    
-    `);
-
-    if(resultado.error) {
-        reporter.panic('No hubo resultados', resultado.errors);
+      }
     }
+  `);
 
-    // Si hay paginas, crear los archivos
-    const habitaciones = resultado.data.allDatoCmsHabitacion.nodes;
-    habitaciones.forEach(habitacion => {
-        actions.createPage({  
-            path: habitacion.slug,
-            component: require.resolve('./src/components/habitaciones.js'),
-            context: {
-                slug: habitacion.slug
-            }
-        })
+  if (queryResult.error)
+    reporter.panic(
+      "an error ocurred while triying to fetch the query",
+      queryResult.errors
+    );
+
+  const rooms = queryResult.data.allDatoCmsHabitacion.nodes;
+  rooms.forEach(room => {
+    actions.createPage({
+      path: room.slug,
+      component: require.resolve("./src/components/rooms.js"),
+      context: {
+        slug: room.slug,
+      },
     });
-}
+  });
+};
