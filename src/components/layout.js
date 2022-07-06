@@ -1,74 +1,87 @@
-import React from 'react';
+import React from "react";
 import Helmet from "react-helmet";
-import { Global, css } from "@emotion/core";
+import { Global, css } from "@emotion/react";
+
+// Components
 import Header from "./header";
 import Footer from "./footer";
+
+// Hooks
 import useSeo from "../hooks/use-seo";
 
-const Layout = (props) => {
+const Layout = props => {
+  const {
+    fallbackSeo: { description, title },
+  } = useSeo();
 
-    const seo = useSeo();
-    const { fallbackSeo: { description, title } } = seo;
+  return (
+    <>
+      <Global
+        styles={css`
+          html {
+            font-size: 62.5%;
+            box-sizing: border-box;
+          }
 
-    return (
-        <>
-            <Global 
-                styles={css`
-                    html {
-                        font-size: 62.5%;
-                        box-sizing: border-box;
-                    }
+          *,
+          *:before,
+          *:after {
+            box-sizing: inherit;
+          }
 
-                    *, *:before, *:after {
-                        box-sizing: inherit;
-                    }
+          body {
+            font-size: 18px;
+            font-size: 1.8rem;
+            line-height: 1.5;
+            font-family: "Raleway", sans-serif;
+          }
 
-                    body {
-                        font-size: 18px;
-                        font-size: 1.8rem;
-                        line-height: 1.5;
-                        font-family: 'PT Sans', sans-serif;
-                    }
+          h1,
+          h2,
+          h3 {
+            margin: 0;
+            line-height: 1.5;
+          }
 
-                    h1, h2, h3 {
-                        margin: 0;
-                        line-height: 1.5;
-                    }
+          h1,
+          h2 {
+            font-family: "Barlow", sans-serif;
+          }
 
-                    h1, h2 {
-                        font-family: 'Roboto', serif;
-                    }
+          h3 {
+            font-family: "Raleway", sans-serif;
+          }
 
-                    h3 {
-                        font-family: 'PT Sans', sans-serif;
-                    }
+          ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+        `}
+      />
 
-                    ul {
-                        list-style: none;
-                        margin: 0;
-                        padding: 0;
-                    }
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={description} />
 
-                `}
-            />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+          integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
+          crossorigin="anonymous"
+        />
 
-            <Helmet>
-                <title>{title}</title>
-                <meta name="description" content={description} />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=Raleway&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
 
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg==" crossorigin="anonymous" />
-                <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-            </Helmet>
+      <Header />
+      {props.children}
+      <Footer title={title} />
+    </>
+  );
+};
 
-            <Header />
-            {props.children}
-            <Footer 
-                title={title}
-            />
-        </>
-    )
-}
- 
 export default Layout;
-
-// Con Helmet se puede editar todo lo que esta en el <head> 

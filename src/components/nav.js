@@ -26,25 +26,25 @@ const NavLink = styled(Link)`
         margin-right: 0;
     }
 
-    &.pagina-actual {
+    &.actual-page {
         border-bottom: 2px solid #FFF;
     }
 `;
 
-const Navegacion = () => {
+const Navigation = () => {
     return (  
         <Nav>
             <NavLink 
                 to={"/"}
-                activeClassName="pagina-actual"
-            >Inicio</NavLink>
+                activeClassName="actual-page"
+            >Home</NavLink>
 
             <NavLink 
-                to={"/nosotros"}
-                activeClassName="pagina-actual"
-            >Nosotros</NavLink>
+                to={"/about"}
+                activeClassName="actual-page"
+            >About Us</NavLink>
         </Nav>
     );
 }
  
-export default Navegacion;
+export default Navigation;
