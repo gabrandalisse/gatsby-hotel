@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from "react-helmet";
-import { Global, css } from "@emotion/core";
+import { Global, css } from "@emotion/react";
 import Header from "./header";
 import Footer from "./footer";
 import useSeo from "../hooks/use-seo";

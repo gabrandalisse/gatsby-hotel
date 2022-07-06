@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Image from 'gatsby-image';
-import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import  styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
 const Contenido = styled.main`
     padding-top: 4rem;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from "@emotion/core";
+import { css } from "@emotion/react";
 import Navegacion from "./nav";
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
@@ -33,7 +33,7 @@ const Header = () => {
           <EnlaceHome
             to="/"
           >
-          <h1> Hotel Gatsby </h1></EnlaceHome>
+          <h1> The Fall Hotel </h1></EnlaceHome>
         
           <Navegacion />
         </div>
