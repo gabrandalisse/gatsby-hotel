@@ -19,7 +19,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   rooms.forEach(room => {
     actions.createPage({
       path: room.slug,
-      component: require.resolve("./src/components/rooms.js"),
+      component: require.resolve("./src/components/rooms.jsx"),
       context: {
         slug: room.slug,
       },

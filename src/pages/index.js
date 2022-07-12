@@ -4,9 +4,9 @@ import styled from "@emotion/styled";
 
 // Components
 import Layout from "../components/layout";
-import HotelImage from "../components/hotelImage";
-import HomeContent from "../components/homeContent";
-import RoomPreview from "../components/roomPreview";
+import Hero from "../components/hero";
+import HomeContent from "../components/home";
+import RoomPreview from "../components/room-preview";
 
 // Hooks
 import useRooms from "../hooks/use-rooms";
@@ -28,7 +28,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <HotelImage />
+      <Hero />
       <HomeContent />
 
       <h2
