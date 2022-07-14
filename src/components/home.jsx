@@ -21,6 +21,21 @@ const HomeText = styled.div`
   }
 `;
 
+// TODO Make the Container responsive
+
+const Container = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 95%;
+  margin: 4rem auto 0 auto;
+
+  div {
+    width: 1000px;
+    margin-right: 20px;
+  }
+`;
+
 const HomeContent = () => {
   const queryResult = useStaticQuery(graphql`
     query {
@@ -41,27 +56,19 @@ const HomeContent = () => {
   const { titulo, contenido, imagen } = queryResult.allDatoCmsPagina.nodes[0];
 
   return (
-    <>
-      <h2
+    <Container>
+      <Image
+        fluid={imagen.fluid}
         css={css`
-          font-size: 4rem;
-          margin-top: 4rem;
-          text-align: center;
+          width: 200px;
         `}
-      >
-        {titulo}
-      </h2>
-
-      <HomeText>
+      />
+      <div>
+        <h2>{titulo}</h2>
         <p>{contenido}</p>
-        <Image fluid={imagen.fluid} />
-      </HomeText>
-    </>
+      </div>
+    </Container>
   );
 };
-
-
-
-
 
 export default HomeContent;
