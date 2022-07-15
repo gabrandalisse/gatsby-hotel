@@ -33,7 +33,7 @@ const Layout = props => {
             font-size: 18px;
             font-size: 1.8rem;
             line-height: 1.5;
-            font-family: "Raleway", sans-serif;
+            font-family: 'Roboto', sans-serif;
           }
 
           h1,
@@ -45,11 +45,11 @@ const Layout = props => {
 
           h1,
           h2 {
-            font-family: "Barlow", sans-serif;
+            font-family: 'Italiana', serif;
           }
 
           h3 {
-            font-family: "Raleway", sans-serif;
+            font-family: 'Roboto', sans-serif;
           }
 
           ul {
@@ -72,7 +72,7 @@ const Layout = props => {
         />
 
         <link
-          href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=Raleway&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Italiana&family=Roboto&display=swap"
           rel="stylesheet"
         />
       </Helmet>
