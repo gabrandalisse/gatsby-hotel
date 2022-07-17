@@ -3,13 +3,13 @@ import { graphql, useStaticQuery } from "gatsby";
 const useRooms = () => {
   const data = useStaticQuery(graphql`
     query {
-      allDatoCmsHabitacion {
+      allDatoCmsRoom {
         nodes {
-          titulo
+          title
           id
           slug
-          contenido
-          imagen {
+          content
+          image {
             fluid(maxWidth: 1200) {
               ...GatsbyDatoCmsFluid
             }
@@ -19,11 +19,11 @@ const useRooms = () => {
     }
   `);
 
-  return data.allDatoCmsHabitacion.nodes.map(room => ({
-    titulo: room.titulo,
+  return data.allDatoCmsRoom.nodes.map(room => ({
+    title: room.title,
     id: room.id,
-    contenido: room.contenido,
-    imagen: room.imagen,
+    content: room.content,
+    image: room.image,
     slug: room.slug,
   }));
 };

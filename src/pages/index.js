@@ -34,8 +34,7 @@ const IndexPage = () => {
       <h2
         css={css`
           text-align: center;
-          margin-top: 5rem;
-          font-size: 3rem;
+          margin-top: 15rem;
         `}
       >
         Our Rooms

@@ -1,16 +1,16 @@
 import React from "react";
+import Layout from "./layout";
 import { graphql } from "gatsby";
 import Image from "gatsby-image";
 import { css } from "@emotion/react";
-import Layout from "./layout";
 
 export const query = graphql`
   query($slug: String!) {
-    allDatoCmsHabitacion(filter: { slug: { eq: $slug } }) {
+    allDatoCmsRoom(filter: { slug: { eq: $slug } }) {
       nodes {
-        titulo
-        contenido
-        imagen {
+        title
+        content
+        image {
           fluid(maxWidth: 1200) {
             ...GatsbyDatoCmsFluid
           }
@@ -22,10 +22,10 @@ export const query = graphql`
 
 const RoomTemplate = ({
   data: {
-    allDatoCmsHabitacion: { nodes },
+    allDatoCmsRoom: { nodes },
   },
 }) => {
-  const { titulo, contenido, imagen } = nodes[0];
+  const { title, content, image } = nodes[0];
 
   return (
     <Layout>
@@ -42,10 +42,10 @@ const RoomTemplate = ({
             margin-top: 4rem;
           `}
         >
-          {titulo}
+          {title}
         </h1>
-        <p>{contenido}</p>
-        <Image fluid={imagen.fluid} />
+        <p>{content}</p>
+        <Image fluid={image.fluid} />
       </main>
     </Layout>
   );

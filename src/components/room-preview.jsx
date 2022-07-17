@@ -18,16 +18,16 @@ const Button = styled(Link)`
 `;
 
 const RoomPreview = ({ room }) => {
-  const { contenido, imagen, titulo, slug } = room;
+  const { content, image, title, slug } = room;
 
   return (
     <div
       css={css`
         border: 1px solid #e1e1e1;
-        margin-bottom: 2rem;
+        margin-bottom: 10rem;
       `}
     >
-      <Image fluid={imagen.fluid} />
+      <Image fluid={image.fluid} />
       <div
         css={css`
           padding: 3rem;
@@ -38,9 +38,9 @@ const RoomPreview = ({ room }) => {
             font-size: 3rem;
           `}
         >
-          {titulo}
+          {title}
         </h3>
-        <p>{contenido}</p>
+        <p>{content}</p>
 
         <Button to={slug}>See Room</Button>
       </div>

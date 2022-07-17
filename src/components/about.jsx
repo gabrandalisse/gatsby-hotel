@@ -25,11 +25,11 @@ const Content = styled.main`
 const AboutUs = () => {
   const queryResult = useStaticQuery(graphql`
     query {
-      allDatoCmsPagina(filter: { slug: { eq: "nosotros" } }) {
+      allDatoCmsPage(filter: { slug: { eq: "about-us" } }) {
         nodes {
-          titulo
-          contenido
-          imagen {
+          title
+          content
+          image {
             fluid(maxWidth: 1200) {
               ...GatsbyDatoCmsFluid
             }
@@ -39,23 +39,22 @@ const AboutUs = () => {
     }
   `);
 
-  const { titulo, contenido, imagen } = queryResult.allDatoCmsPagina.nodes[0];
+  const { title, content, image } = queryResult.allDatoCmsPage.nodes[0];
 
   return (
     <>
       <h2
         css={css`
           text-align: center;
-          font-size: 4rem;
           margin-top: 4rem;
         `}
       >
-        {titulo}
+        {title}
       </h2>
 
       <Content>
-        <p>{contenido}</p>
-        <Image fluid={imagen.fluid} />
+        <p>{content}</p>
+        <Image fluid={image.fluid} />
       </Content>
     </>
   );

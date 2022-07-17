@@ -48,6 +48,10 @@ const Layout = props => {
             font-family: 'Italiana', serif;
           }
 
+          h2 {
+            font-size: 5em;
+          }
+
           h3 {
             font-family: 'Roboto', sans-serif;
           }

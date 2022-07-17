@@ -1,7 +1,7 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const queryResult = await graphql(`
     query {
-      allDatoCmsHabitacion {
+      allDatoCmsRoom {
         nodes {
           slug
         }
@@ -15,7 +15,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       queryResult.errors
     );
 
-  const rooms = queryResult.data.allDatoCmsHabitacion.nodes;
+  const rooms = queryResult.data.allDatoCmsRoom.nodes;
   rooms.forEach(room => {
     actions.createPage({
       path: room.slug,
