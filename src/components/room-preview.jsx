@@ -34,15 +34,18 @@ const RoomPreview = ({ room }) => {
         `}
       >
         <h3
+          data-testid="room-pw-title"
           css={css`
             font-size: 3rem;
           `}
         >
           {title}
         </h3>
-        <p>{content}</p>
+        <p data-testid="room-pw-content">{content}</p>
 
-        <Button to={slug}>See Room</Button>
+        <Button to={slug} data-testid="room-pw-button">
+          See Room
+        </Button>
       </div>
     </div>
   );
