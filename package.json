@@ -1,7 +1,7 @@
 {
   "name": "gatsby-hotel",
   "private": true,
-  "description": "A webpage for The Fall Hotel",
+  "description": "A landing page for The Fall Hotel",
   "version": "0.1.0",
   "author": "Gabirel Andres Brandalisse",
   "dependencies": {
