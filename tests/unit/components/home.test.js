@@ -1,9 +1,9 @@
 import React from "react";
 import * as Gatsby from "gatsby";
 import { render } from "@testing-library/react";
-import AboutUs from "../../../src/components/about";
+import Home from "../../../src/components/home";
 
-describe("unit test for AboutUs component", () => {
+describe("unit test for Home component", () => {
   beforeEach(() => {
     jest.spyOn(Gatsby, "useStaticQuery").mockReturnValue({
       allDatoCmsPage: {
@@ -12,7 +12,7 @@ describe("unit test for AboutUs component", () => {
             title: "test-title",
             content: "test-content",
             image: {
-              fluid: "test-image-fluid-value",
+              fluid: "test-image-fluid",
             },
           },
         ],
@@ -25,14 +25,14 @@ describe("unit test for AboutUs component", () => {
   });
 
   it("should display the query title result correctly", () => {
-    const { getByTestId } = render(<AboutUs />);
+    const { getByTestId } = render(<Home />);
 
-    expect(getByTestId("about-title")).toHaveTextContent("test-title");
+    expect(getByTestId("home-title")).toHaveTextContent("test-title");
   });
 
   it("should display the query content result correctly", () => {
-    const { getByTestId } = render(<AboutUs />);
+    const { getByTestId } = render(<Home />);
 
-    expect(getByTestId("about-content")).toHaveTextContent("test-content");
+    expect(getByTestId("home-content")).toHaveTextContent("test-content");
   });
 });
