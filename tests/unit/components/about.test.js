@@ -3,7 +3,7 @@ import * as Gatsby from "gatsby";
 import { render } from "@testing-library/react";
 import AboutUs from "../../../src/components/about";
 
-describe("unit test for AboutUs component", () => {
+describe("unit tests for AboutUs component", () => {
   beforeEach(() => {
     jest.spyOn(Gatsby, "useStaticQuery").mockReturnValue({
       allDatoCmsPage: {
