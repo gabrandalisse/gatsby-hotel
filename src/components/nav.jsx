@@ -37,11 +37,13 @@ const Navigation = () => {
             <NavLink 
                 to={"/"}
                 activeClassName="actual-page"
+                data-testid="home-link"
             >Home</NavLink>
 
             <NavLink 
                 to={"/about"}
                 activeClassName="actual-page"
+                data-testid="about-link"
             >About Us</NavLink>
         </Nav>
     );

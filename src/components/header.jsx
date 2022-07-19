@@ -33,7 +33,7 @@ const Header = () => {
         `}
       >
         <HomeLink to="/">
-          <h1> The Fall Hotel </h1>
+          <h1 data-testid="header-title"> The Fall Hotel </h1>
         </HomeLink>
 
         <Navigation />
