@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "@testing-library/react";
 import Footer from "../../../src/components/footer";
 
-describe("unit test for Footer component", () => {
+describe("unit tests for Footer component", () => {
   it("should display the hotel title correctly", () => {
     const { getByTestId } = render(<Footer title={"The Fall Hotel"} />);
 
