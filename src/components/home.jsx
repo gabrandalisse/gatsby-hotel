@@ -4,24 +4,18 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import { graphql, useStaticQuery } from "gatsby";
 
-const Container = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+const HomeText = styled.div`
+  padding-top: 4rem;
+  max-width: 1200px;
   width: 95%;
-  margin: 15rem auto 0 auto;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
   }
-
-  div {
-    width: 1000px;
-    margin-right: 20px;
-
-    @media (max-width: 768px) {
-      width: 100%;
-    }
+  p {
+    line-height: 2;
   }
 `;
 
@@ -45,22 +39,22 @@ const HomeContent = () => {
   const { title, content, image } = queryResult.allDatoCmsPage.nodes[0];
 
   return (
-    <Container>
-      <Image
-        fluid={image.fluid}
+    <>
+      <h2
+        data-testid="home-title"
         css={css`
-          width: 200px;
-
-          @media (max-width: 768px) {
-            display: none;
-          }
+          text-align: center;
+          margin-top: 15rem;
         `}
-      />
-      <div>
-        <h2 data-testid="home-title">{title}</h2>
+      >
+        {title}
+      </h2>
+
+      <HomeText>
         <p data-testid="home-content">{content}</p>
-      </div>
-    </Container>
+        <Image fluid={image.fluid} />
+      </HomeText>
+    </>
   );
 };
 
