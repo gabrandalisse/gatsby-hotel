@@ -70,5 +70,4 @@ yarn-error.log
 
 gatsby-config.js
 gatsby-node.js
-package-lock.json
 src/assets
