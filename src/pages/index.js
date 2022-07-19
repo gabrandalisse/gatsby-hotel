@@ -1,13 +1,17 @@
 import React from "react";
-import { css } from "@emotion/core";
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import Layout from "../components/layout";
-import ImagenHotel from "../components/imagenHotel";
-import ContenidoInicio from "../components/contenidoInicio";
-import HabitacionPreview from "../components/habitacionPreview";
-import useHabitaciones from "../hooks/use-habitaciones";
 
-const ListadoHabitaciones = styled.ul`
+// Components
+import Layout from "../components/layout";
+import Hero from "../components/hero";
+import HomeContent from "../components/home";
+import RoomPreview from "../components/room-preview";
+
+// Hooks
+import useRooms from "../hooks/use-rooms";
+
+const RoomList = styled.ul`
   max-width: 1200px;
   width: 95%;
   margin: 4rem auto 0 auto;
@@ -20,31 +24,27 @@ const ListadoHabitaciones = styled.ul`
 `;
 
 const IndexPage = () => {
+  const rooms = useRooms();
 
-  const habitaciones = useHabitaciones();
-  
   return (
     <Layout>
-      <ImagenHotel />
-      <ContenidoInicio />
+      <Hero />
+      <HomeContent />
 
       <h2
         css={css`
           text-align: center;
-          margin-top: 5rem;
-          font-size: 3rem;
+          margin-top: 15rem;
         `}
-      >Nuestras Habitaciones</h2>
+      >
+        Our Rooms
+      </h2>
 
-      <ListadoHabitaciones>
-        {habitaciones.map(habitacion => (
-          <HabitacionPreview 
-            key={habitacion.id}
-            habitacion={habitacion}
-          />
+      <RoomList>
+        {rooms.map(room => (
+          <RoomPreview key={room.id} room={room} />
         ))}
-      </ListadoHabitaciones>
-  
+      </RoomList>
     </Layout>
   );
 };
