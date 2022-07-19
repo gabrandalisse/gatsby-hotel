@@ -44,6 +44,7 @@ const AboutUs = () => {
   return (
     <>
       <h2
+        data-testid="about-title"
         css={css`
           text-align: center;
           margin-top: 4rem;
@@ -53,7 +54,7 @@ const AboutUs = () => {
       </h2>
 
       <Content>
-        <p>{content}</p>
+        <p data-testid="about-content">{content}</p>
         <Image fluid={image.fluid} />
       </Content>
     </>

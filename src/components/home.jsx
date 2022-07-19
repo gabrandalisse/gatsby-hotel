@@ -57,8 +57,8 @@ const HomeContent = () => {
         `}
       />
       <div>
-        <h2>{title}</h2>
-        <p>{content}</p>
+        <h2 data-testid="home-title">{title}</h2>
+        <p data-testid="home-content">{content}</p>
       </div>
     </Container>
   );

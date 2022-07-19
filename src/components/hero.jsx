@@ -55,8 +55,8 @@ const Hero = () => {
   return (
     <ImageBackground tag="section" fluid={image.sharp.fluid} fadeIn="soft">
       <ImageText>
-        <h1>Welcome to Fall Hotel</h1>
-        <p>The best place for your vacations</p>
+        <h1 data-testid="hero-title">Welcome to Fall Hotel</h1>
+        <p data-testid="hero-text">The best place for your vacations</p>
       </ImageText>
     </ImageBackground>
   );

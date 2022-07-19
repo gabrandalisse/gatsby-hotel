@@ -36,11 +36,12 @@ const Footer = ({ title }) => {
         >
           <Navigation />
           <HomeLink to="/">
-            <h1> The Fall Hotel </h1>
+            <h1 data-testid="hotel-title"> The Fall Hotel </h1>
           </HomeLink>
         </div>
       </footer>
       <p
+        data-testid="footer-text"
         css={css`
           text-align: center;
           color: #fff;
