@@ -1,12 +1,56 @@
-# 🏨 Gatsby Hotel
+# Gatsby Hotel 🏨
 
-Gatsby Hotel it's a landing page made with the JAM Stack.
-
-The front-end was made with Gatsby that allowed to me obtain the data from the back-end (Dato CMS) through GraphQL.
-The whole idea around this project was to put all the concepts that I've studied, like SSR and the JAM Stack itself, in practice. 
-
-### 👉 Wanna see it? [click here]!
-[![Netlify Status](https://api.netlify.com/api/v1/badges/382f44ac-6110-49d5-ba04-678b3c0b5170/deploy-status)](https://app.netlify.com/sites/hotel-gatsby-react/deploys)
+Gatsby Hotel is a personal project that allowed me to learn more about Gatsby and DatoCMS. 
+In more detail, is a landing page for "The Fall Hotel" made with the JAM Stack and tested with the help of Jest. 
 
 
-[click here]: https://hotel-gatsby-react.netlify.app/
+
+
+## Tech Stack
+
+**Client:** React, Gatsby, Jest
+
+**Server:** DatoCMS
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/gabrandalisse/gatsby-hotel
+```
+
+Go to the project directory
+
+```bash
+  cd gatsby-hotel
+```
+
+Install Gatsby CLI
+
+```bash
+  npm install -g gatsby
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npm run test
+```
+
