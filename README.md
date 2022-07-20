@@ -1,3 +1,9 @@
+## Badges
+[![Netlify Status](https://api.netlify.com/api/v1/badges/382f44ac-6110-49d5-ba04-678b3c0b5170/deploy-status)](https://app.netlify.com/sites/hotel-gatsby-react/deploys)
+
+
+
+
 # Gatsby Hotel 🏨
 
 Gatsby Hotel is a personal project that allowed me to learn more about Gatsby and DatoCMS. 
