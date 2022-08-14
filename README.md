@@ -14,10 +14,13 @@ In more detail, is a landing page for "The Fall Hotel" made with the JAM Stack a
 
 ## Tech Stack
 
-**Client:** React, Gatsby, Jest
+**Client**\
+<img alt="React" src="https://img.shields.io/badge/-React-45b8d8?style=flat-square&logo=react&logoColor=white" />
+<img alt="Gatsby" src="https://img.shields.io/badge/-Gatsby-663399?style=flat-square&logo=gatsby&logoColor=white" />
+<img alt="Jest" src="https://img.shields.io/badge/-Jest-C21325?style=flat-square&logo=jest&logoColor=white" />
 
-**Server:** DatoCMS
-
+**Server**\
+<img alt="DatoCMS" src="https://img.shields.io/badge/-DatoCMS-FF7751?style=flat-square&logo=datoCMS&logoColor=black" />
 
 ## Run Locally
 
